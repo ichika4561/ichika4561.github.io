@@ -1,106 +1,68 @@
 <!DOCTYPE html>
-<template>
-  <router-link :project="project" v-bind:to="{ name: 'project-id', params: { id: project.id }}">
-    <div class="card">
-      <div class="card-image">
-        <figure class="image is-16by9">
-          <img class="center-cropped" :src='project.content.image.url'>
-        </figure>
-        <div class="flag-container" ">
-          <img class="flag" :src='"@/assets/flags/16/" + project.from_country_id + ".png"'/>
-          <img class="arrow mt-minus-8" src="@/assets/mobile/ic_arrow_forward_white_12px.png"/>
-          <img class="flag"  :src='"@/assets/flags/16/" + project.to_country_id + ".png"'/>
-        </div>
-      </div>
-      <div class="card-content has-text-left pd-16">
-        <p class="title ellipsis is-ellipsis-2">{{ title() }}</p>
-        <div class="amount-container level is-mobile">
-          <span class="is-size-6 level-left">
-            {{ localizedAmount(baseCurrency, project.current_funds) }}
-          </span>
-          <span class="is-size-7 has-text-right complete-rate level-right">
-            {{ $t("project:complete_rate", {rate: project.complete_rate}) }}
-          </span>
-        </div>
-        <progress class="progress is-small is-primary" :value="project.complete_rate" max="100"></progress>
-      </div>
-    </div>
-  </router-link>
-</template>
+<html>
 
-<script>
-export default {
-  data () {
-    return {
-      baseCurrency: 'USD'
-    }
-  },
-  props: [
-    'project'
-  ],
-  methods: {
-    localizedAmount (currency, amount) {
-      return new Intl.NumberFormat(this.$i18n.locale,
-        { style: 'currency', currency: currency }).format(amount)
-    },
-    title () {
-      if (this.project) {
-        if (this.project.content.translation) {
-          return this.project.content.translation.title
-        } else {
-          return this.project.content.title
-        }
-      }
-    }
-  }
-}
-</script>
+<body>
+ <div class="card">
+  <div class="ribbon20-wrapper">
+    <h3 class="ribbon20">NEW!</h3>
+    <p>サルワカへようこそ！</p>
+  </div> 
+</div>
 
-<style scoped lang="scss">
-a{
-  display: block;
-}
-img{
-  .flag{
-    width: 16px;
-    height: 12px;
-  }
-}
+</body>
+  
+<style type="text/css">
 .card{
-  box-shadow: 0 2px 3px rgba(124, 124, 124, 0.1), 0 0 0 1px rgba(124, 124, 124, 0.05);
-  border-radius:  5px 0 0 5px;
+  box-shadow: none;
 }
-@media (max-width: $pc-min-width){
-  .card{
-    box-shadow: none;
-  }
-  .card-content{
-    padding: .5rem 0 0 0;
-  }
-  .title{
-    margin-bottom: 1rem;
-  }
+  
+.ribbon20-wrapper {
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  padding: 20px 0;
+  width: 300px;
+  background: #f1f1f1;
 }
-.flag-container{
+
+.ribbon20 {
+  display: inline-block;
   position: absolute;
-  bottom: 0;
   left: 0;
-  margin: .5rem;
-  background: rgba(0, 0, 0, .7);
-  border-radius:  5px 0 0 5px;
-  padding: 0 .3rem;
-  img{
-    margin: 0 .1rem;
-  }
+  top: 5px;
+  box-sizing: border-box;
+  padding: 0 12px;
+  margin: 0;
+  height: 30px;
+  line-height: 30px;
+  font-size: 18px;
+  letter-spacing: 0.1em;
+  color: white;
+  background: #70c7ff;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.12);
 }
-.title{
-  height: 2.5rem;
-  font-size: 1rem;
+
+.ribbon20:before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: -7px;
+  border: none;
+  height: 38px;
+  width: 7px;
+  background: #70c7ff;
+  border-radius: 5px 0 0 5px;
 }
-.amount-container{
-  margin-bottom: initial;
-}
-.complete-rate{
-  color: $grey600;
+
+.ribbon20:after {
+  position: absolute;
+  content: '';
+  bottom: -7px;
+  left: -5px;
+  border: none;
+  height: 7px;
+  width: 5px;
+  background: #4d99ca;
+  border-radius: 5px 0 0 5px;
 }
 </style>
