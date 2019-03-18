@@ -1,0 +1,49 @@
+.ribbon20-wrapper {
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  padding: 20px 0;
+  width: 300px;
+  background: #f1f1f1;
+}
+
+.ribbon20 {
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 5px;
+  box-sizing: border-box;
+  padding: 0 12px;
+  margin: 0;
+  height: 30px;
+  line-height: 30px;
+  font-size: 18px;
+  letter-spacing: 0.1em;
+  color: white;
+  background: #70c7ff;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.12);
+}
+
+.ribbon20:before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: -7px;
+  border: none;
+  height: 38px;
+  width: 7px;
+  background: #70c7ff;
+  border-radius: 5px 0 0 5px;
+}
+
+.ribbon20:after {
+  position: absolute;
+  content: '';
+  bottom: -7px;
+  left: -5px;
+  border: none;
+  height: 7px;
+  width: 5px;
+  background: #4d99ca;
+  border-radius: 5px 0 0 5px;
+}
