@@ -18,7 +18,43 @@
 .card{
   box-shadow: none;
 }
-  
+.label-container {
+  position: absolute;
+  width: 100%;
+  top: 0;
+
+  .label {
+    position: absolute;
+    left: 0;
+    top: 0.25rem;
+    line-height: 2rem;
+    letter-spacing: 1px;
+    background: #f1f1f1;
+    color: white;
+    &:before {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: -0.4rem;
+      border: none;
+      height: 38px;
+      width: 0.4rem;
+      background: #f1f1f1;
+      border-radius: 5px 0 0 5px;
+    }
+    &:after {
+      position: absolute;
+      content: '';
+      bottom: -0.4rem;
+      left: -0.3rem;
+      height: 0.5rem;
+      width: 0.3rem;
+      background: #f1f1f1;
+      border-radius: 5px 0 0 5px;
+    }
+  }
+/* }
+ 
 .ribbon20-wrapper {
   display: block;
   position: relative;
@@ -67,5 +103,5 @@
   width: 5px;
   background: #4d99ca;
   border-radius: 5px 0 0 5px;
-}
+} */
 </style>
